@@ -1,0 +1,9 @@
+<h1>Instruments</h1>
+<ul>
+  <% @instruments.each do |instrument| %>
+    <li>
+      <h3><%= instrument.name %></h3>
+      <p style="font-style: italic">Classification: <%= instrument.classification %></p>
+    </li>
+  <% end %>
+</ul>
