@@ -3,10 +3,14 @@
 <p>Age: <%= @artist.age %></p>
 
 <p>Instruments:</p>
-<ul>
-  <% @artist.instruments.each do |instrument| %>
-    <li><%= instrument.name %></li>
-  <% end %>
-</ul>
+<% if @artist.instruments.empty? %>
+  <p>There is no instrument connected with this artist.</p>
+<% else %>
+  <ul>
+    <% @artist.instruments.each do |instrument| %>
+      <li><%= instrument.name %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <p><%= link_to 'Go Back to Artist Index Page', artists_path %></p>

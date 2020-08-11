@@ -4,3 +4,9 @@
     <li><%= link_to artist.name, artist_path(artist) %></li>
   <% end %>
 </ul>
+
+<div>
+  <p><%= link_to 'Create New Artist', new_artist_path %></p>
+  <p><%= link_to 'Go to Instrument Index Page', instruments_path %></p>
+  <p><%= link_to 'Connect Artist with Instrument', new_artist_instrument_path %></p>
+</div>

@@ -1,4 +1,18 @@
 <h1>Create New Artist</h1>
+<% if @artist.errors.any? %>
+  <div id="error_explaination">
+    <h2>
+      <%= pluralize(@artist.errors.count, 'error') %>
+      found:
+    </h2>
+    <ul>
+      <% @artist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @artist do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
